@@ -9,7 +9,26 @@ spring:
     hibernate:
       ddl-auto: update  # options: none, update, create, create-drop
     show-sql: true
+#connect to admin server
+  boot:
+    admin:
+      client:
+         url: http://localhost:9999
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+#admin server properties 
+management:
+   endpoint:      
+     health:
+       show-details: always
+     env:
+       enabled: true
+       show-values: always
+   endpoints:
+     web:
+       exposure: 
+         inclued: *   
+         
